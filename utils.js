@@ -12,7 +12,7 @@ const parseNIK = (nomorNIK) => {
             kecamatan: nomorNIK.substr(4, 2)
         }
         let thisDate = {
-            tanggal: (nomorNIK.substr(6, 2) > 40) ? nomorNIK.substr(6, 2) - 40 : nomorNIK.substr(6, 2),
+            hari: ((nomorNIK.substr(6, 2) > 40) ? nomorNIK.substr(6, 2) - 40 : nomorNIK.substr(6, 2)).toString(),
             bulan: nomorNIK.substr(8, 2),
             tahun: (nomorNIK.substr(10, 2) > 1 && nomorNIK.substr(10, 2) < thisYear) ? "20" + nomorNIK.substr(10, 2) : "19" + nomorNIK.substr(10, 2)
         }
