@@ -16,12 +16,15 @@ const parseNIK = (nomorNIK) => {
             bulan: nomorNIK.substr(8, 2),
             tahun: (nomorNIK.substr(10, 2) > 1 && nomorNIK.substr(10, 2) < thisYear) ? "20" + nomorNIK.substr(10, 2) : "19" + nomorNIK.substr(10, 2)
         }
+
+        const jenis_kelamin = (nomorNIK.substr(6, 2) > 40) ? "P" : "L";
         
         return {
             nik: nomorNIK,
             kode_wilayah: thisRegion,
             tanggal: thisDate,
             uniq: thisCode,
+            jenis_kelamin: jenis_kelamin,
             _link: {
                 _wilayah: 'http://www.kemendagri.go.id/pages/data-wilayah'
             }
